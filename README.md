@@ -3,6 +3,9 @@ Linux HA Reminder
 
 ---
 
+## Git Large File Storage (LFS)
+[LFS](https://git-lfs.com/)
+
 ## Line of Services
 ```
 ********************************业务范围********************************
