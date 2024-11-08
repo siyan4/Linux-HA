@@ -19,8 +19,8 @@ Linux HA Reminder
 (5) ，第三类辅助间：待报废的设备、未分类的设备、储备耗材（键盘、鼠标等）。
 
 2，操作系统&基础应用
-(1) ，标准服务器操作系统：Windows Server 2019/2022，Redhat Enterprise Linux，Rocky Linux，CentOS Linux 7（将弃用 CentOS），Debian GNU/Linux，Ubuntu Server。
-(2) ，基础应用：VMware vSphere，H3C UIS，Keepalived-Nginx Cluster，MySQL Galera Cluster，Microsoft Active Directory（尚未部署），DNS Server，GitLab，Jenkins，Nexus，Harbor，MinIO，Zabbix，ZenTaoPMS，KMS等。
+(1) ，标准操作系统：Windows Server 2019/2022，Redhat Enterprise Linux，Rocky Linux，CentOS Linux 7（将弃用），Debian GNU/Linux，Ubuntu Server，SUSE Linux Enterprise Server (SLES)。
+(2) ，基础设施应用：VMware vSphere，H3C UIS，Keepalived-Nginx Cluster，Patroni (HA) PostgreSQL Cluster，MySQL NDB Cluster，MariaDB Galera Cluster，MS SQL Server，Microsoft Active Directory(PDC, SDC, BDC, RDC, SMB, WSUS)，DNS/DHCP Server，GitLab，Jenkins，Nexus，Harbor，Docker/Podman，MinIO，Zabbix，ZenTaoPMS，MS KMS等。
 
 
 二、 集团网络运行中心（NOC）运维/管理
@@ -40,17 +40,17 @@ Linux HA Reminder
 
 2，安全风险&安全事件
 (1) ，安全感知平台（SIP）：安全事件/风险处置，解除误报，完善防火墙、IDS/IPS等信息安全设备配置，修补安全漏洞形成安全闭环。
-(2) ，处理已经报告或监控到的安全事件，完善安全响应机制，提高安全事件回溯能力，建立高可用、快恢复、零受损的安全管理框架。
+(2) ，处理已经报告或监控到的安全事件，完善安全响应机制，提高安全事件回溯能力，建立高可用、快恢复、零损失的安全管理框架。
 
 
 四、 集团全员桌面终端（HelpDesk）规程/事件
 1，终端标准&文件备份&事件处置
-(1) ，标准操作系统：Windows 10 Professional、Windows 11 Professional、MacOS等（如 UOS Linux）。
-(2) ，标准软件清单：a，基础软件（WPS、MS Office、MS Visio、MS Project、Foxmail、企业微信、腾讯会议、Google Chrome、Mozilla Firefox、Everything、Flameshot、Captura、ToDesk、Q-Dir、7-Zip、微信等）；b，安全软件（福安助手、IP-Guard等）；c，专业软件（Autodesk AutoCAD、Adobe Acrobat DC、JetBrains IntelliJ IDEA、JetBrains WebStorm、JetBrains PyCharm等）；d，业务软件（SAP GUI、yonyou UClient等）。
+(1) ，标准操作系统：Windows 10 Professional、Windows 11 Professional、UOS Linux、MacOS等桌面系统。
+(2) ，标准软件清单：a，基础软件（WPS、MS Office、MS Visio、MS Project、Foxmail、企业微信、腾讯会议、Google Chrome、Mozilla Firefox、Everything、Flameshot、Captura、ToDesk、Q-Dir、7-Zip、微信等）；b，安全软件（Cisco ISE、IP-Guard等）；c，专业软件（Autodesk AutoCAD、Adobe Acrobat DC、JetBrains IntelliJ IDEA、JetBrains WebStorm、JetBrains PyCharm等）；d，业务软件（Weaver OA、SAP GUI、yonyou UClient等）。
 
 2，账号管理（AD，尚未实现）&文件访问权限控制
 (1) ，AD/LDAP组织架构更新、用户/组账号管理、网络驱动器（个人盘 I:\ & 共享盘 S:\）。
-(2) ，Windows Server SMB/CIFS 文件访问权限管理、NAS集成AD账号及其权限管理、文件备份/硬盘低格。
+(2) ，Windows Server SMB/CIFS 文件访问权限管理、NAS集成AD账号及其权限管理/安全审计、文件备份/硬盘低格。
 
 3，桌面运维 KB、SOP、Contracts 等文档更新/存档
 (1) ，桌面运维 KB 分类：操作系统类、网络故障类、应用软件类等。
@@ -60,12 +60,12 @@ Linux HA Reminder
 
 五、 集团数字化中心各应用系统事件处置/升级（SLA）
 1，应用系统业务相关事件预处理与工单转移/升级
-(1) ，应用系统清单：DCS、SIS、安全生产信息化管理平台（对接HSE）、yonyou NC、OA、CRM、SRM、HR、Enterprise Mail、SAC、企业微信、福安助手、零信任、态势感知、SAP、SAP-GR合并报表、SAP-FICO、SAP-SD、SAP-MM、SAP-PM、SAP-PP、SAP-QM、SAP-MDG、二维码溯源系统、无人值守地磅系统、金税系统、实时数据库、RPA机器人、智能仓库、档案集成系统、PMS项目管理系统。
-(2) ，根据 SLA 处理应用系统事件，升级事件到相应系统的后端负责人，跟踪并闭环（关闭）用户事件工单。对新问题，在处理完毕后，及时更行知识库（KB），形成参考文档，以备今后使用（事件触发背景、分析思路、解决方案）。
+(1) ，应用系统清单：DCS、SIS、安全生产信息化管理平台（对接EHS/HSE）、yonyou NC、Weaver OA、CRM、SRM、HRM、Enterprise Mail、SAC、企业微信、Cisco ISE准入、IP-Guard加密、SIP态势感知、SAP GUI、SAP-GR合并报表、SAP-FICO、SAP-SD、SAP-MM、SAP-PM、SAP-PP、SAP-QM、SAP-MDG、二维码溯源系统、无人值守地磅系统、金税系统、实时数据库、RPA机器人、智能仓库、档案集成系统、PMS项目管理系统等。
+(2) ，根据 SLA 处理应用系统事件，升级事件到相应系统的后端负责人，跟踪并闭环（关闭）用户事件工单。对新问题，在处理完毕后，及时更新知识库（KB），形成参考文档，以备今后使用（事件触发背景、分析思路、解决方案）。
 
 2，B/S、C/S 架构软件基础服务维护（客户端、服务端）
 (1) ，按需（用户工单、警报时间）调整基础服务资源配置（计算资源、存储资源、网络资源），保障基础服务（如数据库集群）的高可用和稳定性，保障数据备份的有效性和安全性。
-(2) ，在测试环境、预发布环境、生产环境部署应用系统，维护 DevOps 基础设施，如 GitLab，Jenkins，Nexus，Harbor，MinIO，Zabbix，完善 网络/系统 监控机制（通过 SIP、H3C IMC、Zabbix 或 Cacti、Nagios、Prometheus、MRTG、PRTG等）和警报通告方式。
+(2) ，在测试环境、预发布环境、生产环境部署应用系统，维护 DevOps 基础设施，如 GitLab，Jenkins，Nexus，Harbor，MinIO，Zabbix，完善 网络/系统 监控机制（通过 SIP、H3C IMC、Zabbix 或 Cacti、Nagios、Prometheus、MRTG、PRTG等）和监测告警方式。
 
 
 六、 集团IT资产全生命周期管理（NIM, Network Inventory Management）
@@ -77,7 +77,7 @@ Linux HA Reminder
 (1) ，制定资产标签格式标准，维护固定资产台账，整理供应商和维保资料。
 (2) ，制定采购计划、维保需求、报废标准等，定期盘点固定资产（季度或年度）。
 
-3，裸金属服务器、超融合虚拟化（vSphere）、存储网络（vSAN/iSCSI）、文件存储（NAS/SMB）及外围设备/耗材资产管理
+3，裸金属服务器、超融合虚拟化（PVE、UIS、vSphere）、存储网络（vSAN/iSCSI）、文件存储（NFS/SMB）及外围设备/耗材资产管理
 (1) ，制定资产标签格式标准，维护固定资产台账，整理供应商和维保资料。
 (2) ，制定采购计划、维保需求、报废标准等，定期盘点固定资产（季度或年度）。
 
